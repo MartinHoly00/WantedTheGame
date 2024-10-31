@@ -55,7 +55,7 @@ export const TalkToWomanInFrontOfCafe = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setTalkToWomanInFrontOfCafeResult(
@@ -90,7 +90,7 @@ export const TalkToWomanInFrontOfCafe = ({
             You know, it’s a rare thing to meet someone like this. It’s almost
             like it was meant to be.
           </button>
-        </>
+        </div>
       )}
       {talkToWomanInFrontOfCafeResult ===
         TalkToWomanInFrontOfCafeResult.Accept && (

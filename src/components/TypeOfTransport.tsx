@@ -67,7 +67,7 @@ export const TypeOfTransport = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setTransportAnswer(TransportChoices.Car);
@@ -92,7 +92,7 @@ export const TypeOfTransport = ({
           >
             Take the bus
           </button>
-        </>
+        </div>
       )}
     </>
   );

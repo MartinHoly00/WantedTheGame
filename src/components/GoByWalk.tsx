@@ -62,7 +62,7 @@ export const GoByWalk = ({
             }}
           />
           {showButtons && (
-            <>
+            <div className="buttons__container">
               <button
                 onClick={() => {
                   setTalkToWomanInFrontOfCafeAnswer(
@@ -85,7 +85,7 @@ export const GoByWalk = ({
               >
                 No
               </button>
-            </>
+            </div>
           )}
         </>
       )}
@@ -111,7 +111,7 @@ export const GoByWalk = ({
             }}
           />
           {showButtons && (
-            <>
+            <div className="buttons__container">
               <button
                 onClick={() => {
                   setTalkToWomanOnWayToWorkByWalkAnswer(
@@ -134,7 +134,7 @@ export const GoByWalk = ({
               >
                 No
               </button>
-            </>
+            </div>
           )}
         </>
       )}

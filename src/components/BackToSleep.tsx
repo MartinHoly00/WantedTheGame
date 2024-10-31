@@ -30,7 +30,7 @@ export const BackToSleep = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setGetUpAnswer(GetUpChoices.GoBackToSleep); //odpověď na otázku zda vstát nebo ne.
@@ -49,7 +49,7 @@ export const BackToSleep = ({
           >
             No
           </button>
-        </>
+        </div>
       )}
     </>
   );

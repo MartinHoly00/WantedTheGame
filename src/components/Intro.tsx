@@ -1,4 +1,3 @@
-import "./Intro.css";
 import Typewriter from "typewriter-effect";
 
 type IntroProps = {

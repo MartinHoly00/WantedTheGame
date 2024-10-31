@@ -72,7 +72,7 @@ export const TakeTheBus = ({
         }}
       />
       {showButtons && getUpAnswer === GetUpChoices.GoBackToSleep && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setOpenTakeTheBus(false);
@@ -100,10 +100,10 @@ export const TakeTheBus = ({
           >
             Go back for a car.
           </button>
-        </>
+        </div>
       )}
       {showButtons && getUpAnswer === GetUpChoices.GetUp && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setOpenTakeTheBus(false);
@@ -122,7 +122,7 @@ export const TakeTheBus = ({
           >
             No
           </button>
-        </>
+        </div>
       )}
     </>
   );

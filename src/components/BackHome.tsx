@@ -34,7 +34,7 @@ export const BackHome = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setOpenBackHome(false);
@@ -52,7 +52,7 @@ export const BackHome = ({
           >
             Go to the cafe
           </button>
-        </>
+        </div>
       )}
     </>
   );

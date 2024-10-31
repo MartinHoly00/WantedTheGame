@@ -40,7 +40,7 @@ export const GasStation = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setGasStationAnswer(GasStationChoices.TalkToWoman);
@@ -59,7 +59,7 @@ export const GasStation = ({
           >
             No
           </button>
-        </>
+        </div>
       )}
     </>
   );

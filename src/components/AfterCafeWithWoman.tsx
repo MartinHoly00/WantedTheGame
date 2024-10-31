@@ -37,7 +37,7 @@ export const AfterCafeWithWoman = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setAfterCafeWithWomanAnswer(AfterCafeWithWomanChoices.GoHome);
@@ -56,7 +56,7 @@ export const AfterCafeWithWoman = ({
           >
             Kill her
           </button>
-        </>
+        </div>
       )}
     </>
   );

@@ -7,6 +7,7 @@ import {
   AfterCafeWithWomanChoices,
   GasStationChoices,
   GetUpChoices,
+  InJobChoices,
   LateOnBusChoices,
   SomethingToEatHomeChoices,
   StayHomeChoices,
@@ -33,6 +34,10 @@ import { TalkToWomanOnWayToWork } from "./components/TalkToWomanOnWayToWork";
 import { BackHomeAfterCafe } from "./components/BackHomeAfterCafe";
 import { AfterCafeWithWoman } from "./components/AfterCafeWithWoman";
 import { KillWomanAfterCafe } from "./components/KillWomanAfterCafe";
+import { GameOver } from "./components/GameOver";
+import { GoingFromWorkWalk } from "./components/GoingFromWork";
+import { InSupermarket } from "./components/InSupermarket";
+import { WaitingForBusAfterJob } from "./components/WaitingForBusAfterJob";
 
 function App() {
   //variables for the game flow
@@ -62,6 +67,12 @@ function App() {
   const [openBackHomeAgain, setOpenBackHomeAgain] = useState(false);
   const [openAfterCafeWithWoman, setOpenAfterCafeWithWoman] = useState(false);
   const [openKillWomanAfterCafe, setOpenKillWomanAfterCafe] = useState(false);
+  const [openGameOver, setOpenGameOver] = useState(false);
+  const [openGoingFromWorkWalk, setOpenGoingFromWorkWalk] = useState(false);
+  const [openBackHomeAfterWork, setOpenBackHomeAfterWork] = useState(false);
+  const [openInSupermarket, setOpenInSupermarket] = useState(false);
+  const [openWaitingForBusAfterJob, setOpenWaitingForBusAfterJob] =
+    useState(false);
 
   //variables answers and choices for the game
   const [getUpAnswer, setGetUpAnswer] = useState<GetUpChoices>(null as any); //odpověď na otázku zda vstát nebo ne.
@@ -101,7 +112,7 @@ function App() {
   ] = useState<TalkToWomanOnWayToWorkByWalkResult>(null as any); //výsledek oslovování ženy na cestě do práce pěšky.
   const [afterCafeWithWomanAnswer, setAfterCafeWithWomanAnswer] =
     useState<AfterCafeWithWomanChoices>(null as any); //odpověď na otázku co uděláš po kav
-
+  const [inJobAnswer, setInJobAnswer] = useState<InJobChoices>(null as any); //odpověď na otázku co uděláš po kav
   return (
     <>
       <div className="view">
@@ -167,7 +178,6 @@ function App() {
             setOpenInJob={setOpenInJob}
           />
         )}
-        {openInJob && <InJob />}
         {openGasStation && (
           <GasStation
             setOpenGasStation={setOpenGasStation}
@@ -250,6 +260,30 @@ function App() {
             setOpenBackHomeAgain={setOpenBackHomeAgain}
           />
         )}
+        {openInJob && (
+          <InJob
+            talkToWomanOnBusStopResult={talkToWomanOnBusStopResult}
+            talkToWomanOnGasStationResult={talkToWomanOnGasStationResult}
+            talkToWomanOnWayToWorkByWalkResult={
+              talkToWomanOnWayToWorkByWalkResult
+            }
+            setOpenInJob={setOpenInJob}
+            setOpenGameOver={setOpenGameOver}
+            getUpAnswer={getUpAnswer}
+            lateOnBusAnswer={lateOnBusAnswer}
+            transportAnswer={transportAnswer}
+            setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
+            setOpenGoingFromWorkWalk={setOpenGoingFromWorkWalk}
+            setOpenInSupermarket={setOpenInSupermarket}
+            setInJobAnswer={setInJobAnswer}
+            setOpenWaitingForBusAfterJob={setOpenWaitingForBusAfterJob}
+          />
+        )}
+        {openGoingFromWorkWalk && <GoingFromWorkWalk />}
+        {openInSupermarket && <InSupermarket />}
+        {openBackHomeAfterWork && <BackHomeAfterCafe />}
+        {openWaitingForBusAfterJob && <WaitingForBusAfterJob />}
+        {openGameOver && <GameOver />}
       </div>
     </>
   );

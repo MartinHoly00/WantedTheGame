@@ -24,7 +24,6 @@ export const TalkWithWomanGasStation = ({
 
   return (
     <>
-      <p>Gas station conversation</p>
       <Typewriter
         onInit={(typewriter) => {
           typewriter
@@ -52,7 +51,7 @@ export const TalkWithWomanGasStation = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setTalkToWomanOnGasStationResult(
@@ -86,7 +85,7 @@ export const TalkWithWomanGasStation = ({
             You know, I think we’d have a memorable night. Just dinner, but a
             night you’d never forget.
           </button>
-        </>
+        </div>
       )}
       {talkToWomanOnGasStationResult ===
         TalkWithWomanGasStationResult.Accept && (

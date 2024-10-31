@@ -1,4 +1,3 @@
-import { AfterCafeWithWoman } from "./components/AfterCafeWithWoman";
 export enum GetUpChoices {
   GoBackToSleep = "Go back to sleep",
   GetUp = "Get up",
@@ -72,4 +71,11 @@ export enum TalkToWomanOnWayToWorkByWalkResult {
 export enum AfterCafeWithWomanChoices {
   GoHome = "Go home",
   KillHer = "Kill her",
+}
+
+export enum InJobChoices {
+  GoToSupermarket = "Go to supermarket",
+  GoBackHome = "Go back home",
+  GoHomeByWalk = "Go home by walk",
+  WaitForBus = "Wait for bus",
 }

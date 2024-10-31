@@ -44,7 +44,7 @@ export const WantToEatHome = ({
             }}
           />
           {showButtons && (
-            <>
+            <div className="buttons__container">
               <button
                 onClick={() => {
                   setSomethingToEatHomeAnswer(SomethingToEatHomeChoices.Yes);
@@ -63,7 +63,7 @@ export const WantToEatHome = ({
               >
                 No
               </button>
-            </>
+            </div>
           )}
         </>
       )}
@@ -86,7 +86,7 @@ export const WantToEatHome = ({
             }}
           />
           {showButtons && (
-            <>
+            <div className="buttons__container">
               <button
                 onClick={() => {
                   setSomethingToEatHomeAnswer(SomethingToEatHomeChoices.Yes);
@@ -105,7 +105,7 @@ export const WantToEatHome = ({
               >
                 No, eat later
               </button>
-            </>
+            </div>
           )}
         </>
       )}

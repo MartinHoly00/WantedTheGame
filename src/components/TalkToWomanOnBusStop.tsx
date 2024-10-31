@@ -54,7 +54,7 @@ export const TalkWithWomanOnBusStop = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           {/* She Agrees to Go to Dinner */}
           <button
             onClick={() => {
@@ -85,7 +85,7 @@ export const TalkWithWomanOnBusStop = ({
             It’s rare to meet someone who’s... let’s say, so interesting. I
             think we could have an unforgettable evening together
           </button>
-        </>
+        </div>
       )}
       {talkToWomanOnBusStopResult === TalkToWomanOnBusStopResult.Accept && (
         <Typewriter
@@ -149,7 +149,7 @@ export const TalkWithWomanOnBusStop = ({
           }}
         />
       )}
-      {talkToWomanOnBusStopResult === TalkToWomanOnBusStopResult.Reject && (
+      {talkToWomanOnBusStopResult === TalkToWomanOnBusStopResult.Report && (
         <Typewriter
           onInit={(typewriter) => {
             typewriter

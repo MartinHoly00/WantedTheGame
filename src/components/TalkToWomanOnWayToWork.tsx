@@ -52,7 +52,7 @@ export const TalkToWomanOnWayToWork = ({
         }}
       />
       {showButtons && (
-        <>
+        <div className="buttons__container">
           <button
             onClick={() => {
               setTalkToWomanOnWayToWorkByWalkResult(
@@ -87,7 +87,7 @@ export const TalkToWomanOnWayToWork = ({
             You know, it’s a rare thing to meet someone like you. It’s almost…
             meant to be.
           </button>
-        </>
+        </div>
       )}
       {talkToWomanOnWayToWorkByWalkResult ===
         TalkToWomanOnWayToWorkByWalkResult.Accept && (
