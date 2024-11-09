@@ -1,10 +1,14 @@
+import React from "react";
+import "./Clock.css";
+
 type ClockProps = {
   hour: string;
   minute: string;
 };
+
 export const Clock = ({ hour, minute }: ClockProps) => {
   return (
-    <span style={{ position: "absolute", right: ".5rem", top: ".5rem" }}>
+    <span className="digital-clock">
       {hour}:{minute}
     </span>
   );

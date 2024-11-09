@@ -5,14 +5,10 @@
   background-color: black;
 }
 
-.type-writer{
-  position: absolute;
+
+
+.type-writer:nth-child(0){
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .start-game__button{
@@ -20,4 +16,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.start-menu{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

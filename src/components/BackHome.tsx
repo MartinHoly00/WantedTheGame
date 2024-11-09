@@ -6,12 +6,14 @@ type BackHomeProps = {
   setOpenBackHome: (openBackHome: boolean) => void;
   setStayHomeAnswer: (stayHomeAnswer: StayHomeChoices) => void;
   setOpenGoByWalk: (openGoByWalk: boolean) => void;
+  setOpenBackHomeStay: (openBackHomeStay: boolean) => void;
 };
 
 export const BackHome = ({
   setOpenBackHome,
   setStayHomeAnswer,
   setOpenGoByWalk,
+  setOpenBackHomeStay,
 }: BackHomeProps) => {
   const [showButtons, setShowButtons] = useState(false);
   return (
@@ -39,9 +41,19 @@ export const BackHome = ({
             onClick={() => {
               setOpenBackHome(false);
               setStayHomeAnswer(StayHomeChoices.GoToSleep);
+              setOpenBackHomeStay(true);
             }}
           >
             Go to sleep
+          </button>
+          <button
+            onClick={() => {
+              setOpenBackHome(false);
+              setStayHomeAnswer(StayHomeChoices.ReadABook);
+              setOpenBackHomeStay(true);
+            }}
+          >
+            Read a book
           </button>
           <button
             onClick={() => {

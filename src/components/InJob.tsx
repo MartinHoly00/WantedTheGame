@@ -24,6 +24,8 @@ type InJobProps = {
   setOpenInSupermarket: (openInSupermarket: boolean) => void;
   setInJobAnswer: (inJobAnswer: InJobChoices) => void;
   setOpenWaitingForBusAfterJob: (openWaitingForBusAfterJob: boolean) => void;
+  setOpenGoToRestaurant: (openGoToRestaurant: boolean) => void;
+  setOpenBackHomeAgain: (openBackHomeAgain: boolean) => void;
 };
 
 export const InJob = ({
@@ -40,6 +42,8 @@ export const InJob = ({
   setOpenInSupermarket,
   setInJobAnswer,
   setOpenWaitingForBusAfterJob,
+  setOpenGoToRestaurant,
+  setOpenBackHomeAgain,
 }: InJobProps) => {
   const [showButtons, setShowButtons] = useState(false);
   return (
@@ -70,6 +74,8 @@ export const InJob = ({
               .typeString(
                 "You are arrested and you are going to the court. You are sentenced to life in prison."
               )
+              .start()
+              .pauseFor(1000)
               .callFunction(() => {
                 setOpenInJob(false);
                 setOpenGameOver(true);
@@ -234,17 +240,26 @@ export const InJob = ({
                 });
             }}
           />
-          {(showButtons && lateOnBusAnswer != LateOnBusChoices.Walk) ||
-            (transportAnswer != TransportChoices.Bus && (
+          {(showButtons && lateOnBusAnswer === LateOnBusChoices.Car) ||
+            (transportAnswer === TransportChoices.Car && (
               <div className="buttons__container">
                 <button
                   onClick={() => {
                     setOpenInJob(false);
                     setInJobAnswer(InJobChoices.GoBackHome);
-                    setOpenBackHomeAfterWork(true);
+                    setOpenBackHomeAgain(true);
                   }}
                 >
                   Go Home
+                </button>
+                <button
+                  onClick={() => {
+                    setOpenInJob(false);
+                    setInJobAnswer(InJobChoices.GoToRestaurant);
+                    setOpenGoToRestaurant(true);
+                  }}
+                >
+                  Go To Restaurant
                 </button>
                 <button
                   onClick={() => {
@@ -253,7 +268,7 @@ export const InJob = ({
                     setOpenInSupermarket(true);
                   }}
                 >
-                  Go To Shop
+                  Go To Supermarket
                 </button>
               </div>
             ))}
@@ -275,7 +290,7 @@ export const InJob = ({
                   setOpenInSupermarket(true);
                 }}
               >
-                Go To Shop
+                Go To Supermarket
               </button>
             </div>
           )}

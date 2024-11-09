@@ -7,7 +7,7 @@ export const StartMenu = ({
   setOpenIntro,
 }: StartMenuProps) => {
   return (
-    <>
+    <div className="start-menu">
       <h1>Wanted</h1>
       <button
         onClick={() => {
@@ -17,6 +17,6 @@ export const StartMenu = ({
       >
         Start Game
       </button>
-    </>
+    </div>
   );
 };

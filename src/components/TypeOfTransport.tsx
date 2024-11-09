@@ -15,7 +15,7 @@ type TypeOfTransportProps = {
   setOpenTakeTheBus: (openTakeTheBus: boolean) => void;
   setOpenInJob: (openInJob: boolean) => void;
   setOpenGasStation: (setOpenGasStation: boolean) => void;
-  //neco cim otevreme dalsi juchu
+  setOpenBackHome: (openBackHome: boolean) => void;
 };
 
 export const TypeOfTransport = ({
@@ -26,6 +26,7 @@ export const TypeOfTransport = ({
   setOpenTakeTheBus,
   setOpenInJob,
   setOpenGasStation,
+  setOpenBackHome,
 }: TypeOfTransportProps) => {
   const [showButtons, setShowButtons] = useState(false);
   return (
@@ -92,6 +93,17 @@ export const TypeOfTransport = ({
           >
             Take the bus
           </button>
+          {getUpAnswer === GetUpChoices.GoBackToSleep && (
+            <button
+              onClick={() => {
+                setTransportAnswer(TransportChoices.StayAtHome);
+                setOpenTypeOfTransport(false);
+                setOpenBackHome(true);
+              }}
+            >
+              Stay At Home
+            </button>
+          )}
         </div>
       )}
     </>

@@ -1,3 +1,4 @@
+import { WomanBodyInFrontOfHouse } from "./components/WomanBodyInFrontOfHouse";
 export enum GetUpChoices {
   GoBackToSleep = "Go back to sleep",
   GetUp = "Get up",
@@ -11,6 +12,7 @@ export enum SomethingToEatHomeChoices {
 export enum TransportChoices {
   Car = "Car",
   Bus = "Bus",
+  StayAtHome = "Stay at home",
 }
 
 export enum TalkToWomanOnBusStopChoices {
@@ -44,6 +46,7 @@ export enum TalkWithWomanGasStationResult {
 export enum StayHomeChoices {
   GoToSleep = "Go to sleep",
   GoToCafe = "Go to a cafe",
+  ReadABook = "Read a book",
 }
 
 export enum TalkToWomanInFrontOfCafeChoices {
@@ -78,4 +81,61 @@ export enum InJobChoices {
   GoBackHome = "Go back home",
   GoHomeByWalk = "Go home by walk",
   WaitForBus = "Wait for bus",
+  GoToRestaurant = "Go to restaurant",
+}
+
+export enum BackHomeStayChoices {
+  GoToRestaurant = "Go to restaurant",
+  CookAtHome = "Cook at home",
+}
+
+export enum TalkToWomanInFrontOfRestaurantChoices {
+  Yes = "Yes",
+  No = "No",
+}
+
+export enum TalkToWomanInFrontOfRestaurantResult {
+  Reject = "She Rejected you",
+  Accept = "She Accepted you",
+  Report = "She reported you",
+}
+
+export enum AfterRestaurantWithWomanChoices {
+  GoHome = "Go home",
+  InviteHerToBar = "Invite her to a bar",
+  InviteHerToCar = "Invite her to a car",
+  InviteHerToPark = "Invite her to a park",
+}
+
+export enum GoingFromWorkWalkChoices {
+  DoNothing = "Do nothing",
+  Run = "Run",
+  Hide = "Hide",
+}
+
+export enum BackHomeAgainChoices {
+  DontEat = "Don't eat",
+  MakeMealAtHome = "Make meal at home",
+  GoToRestaurant = "Go to restaurant",
+}
+
+export enum LunchTimeAtHomeChoices {
+  ReadABook = "Read a book",
+  WatchTv = "Watch TV",
+}
+
+export enum InParkWithWomanFromRestaurantChoices {
+  KillHer = "Kill her",
+  RapeHer = "Rape her",
+  RapeHerAndKill = "Rape her and kill",
+}
+
+export enum InCarWithWomanFromRestaurantChoices {
+  TakeBodyHome = "Take body home",
+  ThrowBodyInRiver = "Throw body in river",
+}
+
+export enum WomanBodyInFrontOfHouseResult {
+  SavedYourself = "You saved yourself",
+  Arrested = "You got arrested",
 }
