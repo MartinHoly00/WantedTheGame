@@ -32,7 +32,7 @@ export const InCarWithWomanFromRestaurant = ({
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "You offered to drive her home, pulled over to the side of the road on a secluded road and killed her."
+                "You are in car with her, pulled over to the side of the road on a secluded road and killed her."
               )
               .start()
               .pauseFor(1000)

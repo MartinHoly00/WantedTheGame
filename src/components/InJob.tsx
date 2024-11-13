@@ -26,6 +26,11 @@ type InJobProps = {
   setOpenWaitingForBusAfterJob: (openWaitingForBusAfterJob: boolean) => void;
   setOpenGoToRestaurant: (openGoToRestaurant: boolean) => void;
   setOpenBackHomeAgain: (openBackHomeAgain: boolean) => void;
+  setOpenGoHomeAfterWorkingCar: (openGoHomeAfterWorkingCar: boolean) => void;
+  setOpenGoToSupermarketAfterWork: (
+    openGoToSupermarketAfterWork: boolean
+  ) => void;
+  setOpenGoHomeByWalkAfterWork: (openGoHomeByWalkAfterWork: boolean) => void;
 };
 
 export const InJob = ({
@@ -44,6 +49,9 @@ export const InJob = ({
   setOpenWaitingForBusAfterJob,
   setOpenGoToRestaurant,
   setOpenBackHomeAgain,
+  setOpenGoHomeAfterWorkingCar,
+  setOpenGoToSupermarketAfterWork,
+  setOpenGoHomeByWalkAfterWork,
 }: InJobProps) => {
   const [showButtons, setShowButtons] = useState(false);
   return (
@@ -175,7 +183,7 @@ export const InJob = ({
                 onClick={() => {
                   setOpenInJob(false);
                   setInJobAnswer(InJobChoices.GoBackHome);
-                  setOpenBackHomeAfterWork(true);
+                  setOpenGoHomeAfterWorkingCar(true);
                 }}
               >
                 Go Home
@@ -184,7 +192,7 @@ export const InJob = ({
                 onClick={() => {
                   setOpenInJob(false);
                   setInJobAnswer(InJobChoices.GoToSupermarket);
-                  setOpenInSupermarket(true);
+                  setOpenGoToSupermarketAfterWork(true);
                 }}
               >
                 Go To Supermarket
@@ -193,6 +201,15 @@ export const InJob = ({
           )}
           {showButtons && transportAnswer === TransportChoices.Bus && (
             <div className="buttons__container">
+              <button
+                onClick={() => {
+                  setOpenInJob(false);
+                  setInJobAnswer(InJobChoices.GoToSupermarket);
+                  setOpenGoToSupermarketAfterWork(true);
+                }}
+              >
+                Go To Supermarket
+              </button>
               <button
                 onClick={() => {
                   setOpenInJob(false);
@@ -205,11 +222,11 @@ export const InJob = ({
               <button
                 onClick={() => {
                   setOpenInJob(false);
-                  setInJobAnswer(InJobChoices.GoToSupermarket);
-                  setOpenBackHomeAfterWork(true);
+                  setInJobAnswer(InJobChoices.GoHomeByWalk);
+                  setOpenGoHomeByWalkAfterWork(true);
                 }}
               >
-                Go To Supermarket
+                Go Home by walk
               </button>
             </div>
           )}
@@ -241,7 +258,7 @@ export const InJob = ({
             }}
           />
           {(showButtons && lateOnBusAnswer === LateOnBusChoices.Car) ||
-            (transportAnswer === TransportChoices.Car && (
+            (showButtons && transportAnswer === TransportChoices.Car && (
               <div className="buttons__container">
                 <button
                   onClick={() => {

@@ -1,4 +1,4 @@
-import { WomanBodyInFrontOfHouse } from "./components/WomanBodyInFrontOfHouse";
+import { WalksWomanHomeAfterJob } from "./components/WalksWomanHomeAfterJob";
 export enum GetUpChoices {
   GoBackToSleep = "Go back to sleep",
   GetUp = "Get up",
@@ -138,4 +138,70 @@ export enum InCarWithWomanFromRestaurantChoices {
 export enum WomanBodyInFrontOfHouseResult {
   SavedYourself = "You saved yourself",
   Arrested = "You got arrested",
+}
+
+export enum InSupermarketChoices {
+  Yes = "Yes",
+  No = "No",
+}
+
+export enum TalkToWomanInFrontOfSupermarketResult {
+  Reject = "She Rejected you",
+  Accept = "She Accepted you",
+  Report = "She reported you",
+}
+
+export enum WithWomanInCarAfterSupermarketChoices {
+  TakeHerHome = "Take her home",
+  KillHer = "Kill her",
+}
+
+export enum WithWomanInParkAfterSupermarketChoices {
+  KillHer = "Kill her",
+  LetHerGo = "Let her go",
+}
+
+export enum GoHomeAfterWorkingCarChoices {
+  Yes = "Yes",
+  No = "No",
+}
+
+export enum GoHomeAfterWorkingCarAproachGirlChoices {
+  KillHer = "Kill her",
+  KillHerAndRape = "Kill her and rape",
+  TalkToHer = "Talk to her",
+}
+
+export enum GoHomeAfterWorkCarCarCrashChoices {
+  CallPolice = "Call police",
+  RunAway = "Run away",
+  HelpDriver = "Help driver",
+}
+
+export enum MeetWomanInForestChoices {
+  IgnoreHer = "Ignore her",
+  KillHer = "Kill her",
+  KillHerAndRape = "Kill her and rape",
+}
+
+export enum WaitingForBusAfterJobChoices {
+  StartRunning = "Start running",
+  DoNothing = "Do nothing",
+}
+
+export enum OnBusStopHomeAfterWorkChoices {
+  Yes = "Yes",
+  No = "No",
+}
+
+export enum TalkToWomanOnBusStopAfterWorkResult {
+  Reject = "She Rejected you",
+  Accept = "She Accepted you",
+  Report = "She reported you",
+}
+
+export enum WalksWomanHomeAfterJobChoices {
+  KillHer = "Kill her",
+  RapeHer = "Rape her",
+  LetHerGo = "Let her go",
 }
