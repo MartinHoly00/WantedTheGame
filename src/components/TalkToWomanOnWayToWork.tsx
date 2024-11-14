@@ -46,6 +46,8 @@ export const TalkToWomanOnWayToWork = ({
             .typeString(
               "You: Say, I know a nice restaurant nearby. What do you think about meeting up later? Dinner, just you and me."
             )
+            .start()
+            .pauseFor(1000)
             .callFunction(() => {
               setShowButtons(true);
             });

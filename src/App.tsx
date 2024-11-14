@@ -13,15 +13,21 @@ import {
   GoHomeAfterWorkCarCarCrashChoices,
   GoHomeAfterWorkingCarAproachGirlChoices,
   GoHomeAfterWorkingCarChoices,
+  GoHomeByWalkAfterWorkChoices,
   GoingFromWorkWalkChoices,
+  GoToSupermarketAfterWorkChoices,
   InCarWithWomanFromRestaurantChoices,
   InJobChoices,
   InParkWithWomanFromRestaurantChoices,
   InSupermarketChoices,
+  KillWomanInCarAfterJobChoices,
+  KillWomanInParkAfterJobChoices,
+  KillWomanOnWayHomeByWalkAfterWorkChoices,
   LateOnBusChoices,
   LunchTimeAtHomeChoices,
   MeetWomanInForestChoices,
   OnBusStopHomeAfterWorkChoices,
+  OnWayHomeByWalkAfterWorkChoices,
   SomethingToEatHomeChoices,
   StayHomeChoices,
   TalkToWomanInFrontOfCafeChoices,
@@ -32,8 +38,10 @@ import {
   TalkToWomanOnBusStopAfterWorkResult,
   TalkToWomanOnBusStopChoices,
   TalkToWomanOnBusStopResult,
+  TalkToWomanOnWayHomeByWalkAfterWorkResult,
   TalkToWomanOnWayToWorkByWalkChoices,
   TalkToWomanOnWayToWorkByWalkResult,
+  TalkToWomanSupermarketAfterWorkResult,
   TalkWithWomanGasStationResult,
   TransportChoices,
   WaitingForBusAfterJobChoices,
@@ -83,6 +91,12 @@ import { GoHomeByWalkAfterWork } from "./components/GoHomeByWalkAfterWork";
 import { OnBusStopHomeAfterWork } from "./components/OnBusStopHomeAfterWork";
 import { TalkToWomanOnBusStopAfterWork } from "./components/TalkToWomanOnBusStopAfterWork";
 import { WalksWomanHomeAfterJob } from "./components/WalksWomanHomeAfterJob";
+import { OnWayHomeByWalkAfterWork } from "./components/OnWayHomeByWalkAfterWork";
+import { TalkToWomanOnWayHomeByWalkAfterWork } from "./components/TalkToWomanOnWayHomeByWalkAfterWork";
+import { KillWomanOnWayHomeByWalkAfterWork } from "./components/KillWomanOnWayHomeByWalkAfterWork";
+import { TalkToWomanSupermarketAfterWork } from "./components/TalkToWomanSupermarketAfterWork";
+import { KillWomanInParkAfterJob } from "./components/KillWomanInParkAfterJob";
+import { KillWomanInCarAfterJob } from "./components/KillWomanInCarAfterJob";
 
 function App() {
   //variables for the game flow
@@ -171,6 +185,24 @@ function App() {
     setOpenTalkToWomanOnBusStopAfterWork,
   ] = useState(false);
   const [openWalksWomanHomeAfterJob, setOpenWalksWomanHomeAfterJob] =
+    useState(false);
+  const [openOnWayHomeByWalkAfterWork, setOpenOnWayHomeByWalkAfterWork] =
+    useState(false);
+  const [
+    openTalkToWomanOnWayHomeByWalkAfterWork,
+    setOpenTalkToWomanOnWayHomeByWalkAfterWork,
+  ] = useState(false);
+  const [
+    openKillWomanOnWayHomeByWalkAfterWork,
+    setOpenKillWomanOnWayHomeByWalkAfterWork,
+  ] = useState(false);
+  const [
+    openTalkToWomanSupermarketAfterWork,
+    setOpenTalkToWomanSupermarketAfterWork,
+  ] = useState(false);
+  const [openKillWomanInParkAfterJob, setOpenKillWomanInParkAfterJob] =
+    useState(false);
+  const [openKillWomanInCarAfterJob, setOpenKillWomanInCarAfterJob] =
     useState(false);
 
   //variables answers and choices for the game
@@ -277,6 +309,28 @@ function App() {
   ] = useState<TalkToWomanOnBusStopAfterWorkResult>(null as any);
   const [walksWomanHomeAfterJobAnswer, setWalksWomanHomeAfterJobAnswer] =
     useState<WalksWomanHomeAfterJobChoices>(null as any);
+  const [goHomeByWalkAfterWorkAnswer, setGoHomeByWalkAfterWorkAnswer] =
+    useState<GoHomeByWalkAfterWorkChoices>(null as any);
+  const [onWayHomeByWalkAfterWorkAnswer, setOnWayHomeByWalkAfterWorkAnswer] =
+    useState<OnWayHomeByWalkAfterWorkChoices>(null as any);
+  const [
+    talkToWomanOnWayHomeByWalkAfterWorkResult,
+    setTalkToWomanOnWayHomeByWalkAfterWorkResult,
+  ] = useState<TalkToWomanOnWayHomeByWalkAfterWorkResult>(null as any);
+  const [
+    killWomanOnWayHomeByWalkAfterWorkAnswer,
+    setKillWomanOnWayHomeByWalkAfterWorkAnswer,
+  ] = useState<KillWomanOnWayHomeByWalkAfterWorkChoices>(null as any);
+  const [goToSupermarketAfterWorkAnswer, setGoToSupermarketAfterWorkAnswer] =
+    useState<GoToSupermarketAfterWorkChoices>(null as any);
+  const [
+    talkToWomanSupermarketAfterWorkResult,
+    setTalkToWomanSupermarketAfterWorkResult,
+  ] = useState<TalkToWomanSupermarketAfterWorkResult>(null as any);
+  const [killWomanInCarAfterJobAnswer, setKillWomanInCarAfterJobAnswer] =
+    useState<KillWomanInCarAfterJobChoices>(null as any);
+  const [killWomanInParkAfterJobAnswer, setKillWomanInParkAfterJobAnswer] =
+    useState<KillWomanInParkAfterJobChoices>(null as any);
 
   return (
     <>
@@ -308,6 +362,7 @@ function App() {
             setSomethingToEatHomeAnswer={setSomethingToEatHomeAnswer}
             setOpenTypeOfTransport={setOpenTypeOfTransport}
             setOpenInJob={setOpenInJob}
+            setTransportAnswer={setTransportAnswer}
           />
         )}
         {openTypeOfTransport && (
@@ -688,12 +743,6 @@ function App() {
             setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
           />
         )}
-        {openGoToSupermarketAfterWork && (
-          <GoToSupermarketAfterWork
-            setOpenGoToSupermarketAfterWork={setOpenGoToSupermarketAfterWork}
-          />
-        )}
-        {openGoHomeByWalkAfterWork && <GoHomeByWalkAfterWork />}
         {openWaitingForBusAfterJob && (
           <WaitingForBusAfterJob
             setOpenWaitingForBusAfterJob={setOpenWaitingForBusAfterJob}
@@ -734,6 +783,105 @@ function App() {
             setOpenWalksWomanHomeAfterJob={setOpenWalksWomanHomeAfterJob}
             setWalksWomanHomeAfterJobAnswer={setWalksWomanHomeAfterJobAnswer}
             walksWomanHomeAfterJobAnswer={walksWomanHomeAfterJobAnswer}
+            setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
+          />
+        )}
+        {openGoHomeByWalkAfterWork && (
+          <GoHomeByWalkAfterWork
+            setOpenGoHomeByWalkAfterWork={setOpenGoHomeByWalkAfterWork}
+            setGoHomeByWalkAfterWorkAnswer={setGoHomeByWalkAfterWorkAnswer}
+            goHomeByWalkAfterWorkAnswer={goHomeByWalkAfterWorkAnswer}
+            setOpenGameOver={setOpenGameOver}
+            setOpenOnWayHomeByWalkAfterWork={setOpenOnWayHomeByWalkAfterWork}
+          />
+        )}
+        {openOnWayHomeByWalkAfterWork && (
+          <OnWayHomeByWalkAfterWork
+            setOpenOnWayHomeByWalkAfterWork={setOpenOnWayHomeByWalkAfterWork}
+            setOpenHomeAtEvening={setOpenHomeAtEvening}
+            setOnWayHomeByWalkAfterWorkAnswer={
+              setOnWayHomeByWalkAfterWorkAnswer
+            }
+            setOpenTalkToWomanOnWayHomeByWalkAfterWork={
+              setOpenTalkToWomanOnWayHomeByWalkAfterWork
+            }
+          />
+        )}
+        {openTalkToWomanOnWayHomeByWalkAfterWork && (
+          <TalkToWomanOnWayHomeByWalkAfterWork
+            setOpenHomeAtEvening={setOpenHomeAtEvening}
+            setOpenTalkToWomanOnWayHomeByWalkAfterWork={
+              setOpenTalkToWomanOnWayHomeByWalkAfterWork
+            }
+            setTalkToWomanOnWayHomeByWalkAfterWorkResult={
+              setTalkToWomanOnWayHomeByWalkAfterWorkResult
+            }
+            talkToWomanOnWayHomeByWalkAfterWorkResult={
+              talkToWomanOnWayHomeByWalkAfterWorkResult
+            }
+            setOpenKillWomanOnWayHomeByWalkAfterWork={
+              setOpenKillWomanOnWayHomeByWalkAfterWork
+            }
+          />
+        )}
+        {openKillWomanOnWayHomeByWalkAfterWork && (
+          <KillWomanOnWayHomeByWalkAfterWork
+            setKillWomanOnWayHomeByWalkAfterWorkAnswer={
+              setKillWomanOnWayHomeByWalkAfterWorkAnswer
+            }
+            setOpenKillWomanOnWayHomeByWalkAfterWork={
+              setOpenKillWomanOnWayHomeByWalkAfterWork
+            }
+            setOpenGameOver={setOpenGameOver}
+            setOpenHomeAtEvening={setOpenHomeAtEvening}
+            killWomanOnWayHomeByWalkAfterWorkAnswer={
+              killWomanOnWayHomeByWalkAfterWorkAnswer
+            }
+          />
+        )}
+        {openGoToSupermarketAfterWork && (
+          <GoToSupermarketAfterWork
+            setOpenGoToSupermarketAfterWork={setOpenGoToSupermarketAfterWork}
+            transportAnswer={transportAnswer}
+            setGoToSupermarketAfterWorkAnswer={
+              setGoToSupermarketAfterWorkAnswer
+            }
+            setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
+            setOpenTalkToWomanSupermarketAfterWork={
+              setOpenTalkToWomanSupermarketAfterWork
+            }
+          />
+        )}
+        {openTalkToWomanSupermarketAfterWork && (
+          <TalkToWomanSupermarketAfterWork
+            setOpenTalkToWomanSupermarketAfterWork={
+              setOpenTalkToWomanSupermarketAfterWork
+            }
+            setTalkToWomanSupermarketAfterWorkResult={
+              setTalkToWomanSupermarketAfterWorkResult
+            }
+            transportAnswer={transportAnswer}
+            talkToWomanSupermarketAfterWorkResult={
+              talkToWomanSupermarketAfterWorkResult
+            }
+            setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
+            setOpenKillWomanInParkAfterJob={setOpenKillWomanInParkAfterJob}
+            setOpenKillWomanInCarAfterJob={setOpenKillWomanInCarAfterJob}
+          />
+        )}
+        {openKillWomanInParkAfterJob && (
+          <KillWomanInParkAfterJob
+            setKillWomanInParkAfterJobAnswer={setKillWomanInParkAfterJobAnswer}
+            setOpenKillWomanInParkAfterJob={setOpenKillWomanInParkAfterJob}
+            killWomanInParkAfterJobAnswer={killWomanInParkAfterJobAnswer}
+            setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
+          />
+        )}
+        {openKillWomanInCarAfterJob && (
+          <KillWomanInCarAfterJob
+            setKillWomanInCarAfterJobAnswer={setKillWomanInCarAfterJobAnswer}
+            setOpenKillWomanInCarAfterJob={setOpenKillWomanInCarAfterJob}
+            killWomanInCarAfterJobAnswer={killWomanInCarAfterJobAnswer}
             setOpenBackHomeAfterWork={setOpenBackHomeAfterWork}
           />
         )}

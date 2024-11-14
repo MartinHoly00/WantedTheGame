@@ -1,4 +1,3 @@
-import { WalksWomanHomeAfterJob } from "./components/WalksWomanHomeAfterJob";
 export enum GetUpChoices {
   GoBackToSleep = "Go back to sleep",
   GetUp = "Get up",
@@ -203,5 +202,47 @@ export enum TalkToWomanOnBusStopAfterWorkResult {
 export enum WalksWomanHomeAfterJobChoices {
   KillHer = "Kill her",
   RapeHer = "Rape her",
+  LetHerGo = "Let her go",
+}
+
+export enum GoHomeByWalkAfterWorkChoices {
+  RunAway = "Run away",
+  DoNothing = "Do nothing",
+}
+
+export enum OnWayHomeByWalkAfterWorkChoices {
+  No = "No",
+  Yes = "Yes",
+}
+
+export enum TalkToWomanOnWayHomeByWalkAfterWorkResult {
+  Reject = "She Rejected you",
+  Accept = "She Accepted you",
+  Report = "She reported you",
+}
+
+export enum KillWomanOnWayHomeByWalkAfterWorkChoices {
+  HideHerBodyInBush = "Hide her body in bush",
+  LetHerBodyRoadside = "Let her body roadside",
+}
+
+export enum GoToSupermarketAfterWorkChoices {
+  Yes = "Yes",
+  No = "No",
+}
+
+export enum TalkToWomanSupermarketAfterWorkResult {
+  Reject = "She Rejected you",
+  Accept = "She Accepted you",
+  Report = "She reported you",
+}
+
+export enum KillWomanInCarAfterJobChoices {
+  KillHer = "Kill her",
+  TakeHerHome = "Take her home",
+}
+
+export enum KillWomanInParkAfterJobChoices {
+  KillHer = "Kill her",
   LetHerGo = "Let her go",
 }

@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { GetUpChoices, SomethingToEatHomeChoices } from "../enums";
+import {
+  GetUpChoices,
+  SomethingToEatHomeChoices,
+  TransportChoices,
+} from "../enums";
 import Typewriter from "typewriter-effect";
 import { Clock } from "./Clock";
 
@@ -11,6 +15,7 @@ type WantToEatHomeProps = {
   ) => void;
   setOpenTypeOfTransport: (openTypeOfTransport: boolean) => void;
   setOpenInJob: (openInJob: boolean) => void;
+  setTransportAnswer: (transportAnswer: TransportChoices) => void;
 };
 
 export const WantToEatHome = ({
@@ -19,6 +24,7 @@ export const WantToEatHome = ({
   setSomethingToEatHomeAnswer,
   setOpenTypeOfTransport,
   setOpenInJob,
+  setTransportAnswer,
 }: WantToEatHomeProps) => {
   const [showButtons, setShowButtons] = useState(false);
   return (
@@ -90,6 +96,7 @@ export const WantToEatHome = ({
               <button
                 onClick={() => {
                   setSomethingToEatHomeAnswer(SomethingToEatHomeChoices.Yes);
+                  setTransportAnswer(TransportChoices.Car);
                   setOpenWantToEatHome(false);
                   setOpenInJob(true);
                 }}
